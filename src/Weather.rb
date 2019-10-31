@@ -23,7 +23,7 @@ class Weather
   end
 
   #メイン処理メソッド
-  def do_process()
+  def doProcess()
     #拠点コード
     keyWord = YAML.load_file('./conf/config.yml')["location-code"]
     #天気API URL取得

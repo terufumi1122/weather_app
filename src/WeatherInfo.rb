@@ -1,5 +1,5 @@
 class WeatherInfo
-  attr_accessor :description
+  attr_accessor :description,
   :todayTelop,
   :today,
   :todayTempMin,
