@@ -1,5 +1,6 @@
 class WeatherInfo
   attr_accessor :description,
+  :city,
   :todayTelop,
   :today,
   :todayTempMin,
@@ -23,6 +24,17 @@ class WeatherInfo
   def description=(value)
     @description = value
   end
+
+  #都市名
+  def city()
+    @city
+  end
+
+  #都市名
+  def city=(value)
+    @city = value
+  end
+
 
   #本日テロップ
   def todayTelop()

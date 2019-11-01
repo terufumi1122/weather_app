@@ -7,7 +7,9 @@ require './src/WeatherInfo'
 class Weather
 
   @@DESCRIPTION = "description"
-  @@TEXT = "test"
+  @@TEXT = "text"
+  @@LOCATION = "location"
+  @@CITY = "city"
   @@FORECASTS = "forecasts"
   @@TELOP = "telop"
   @@DATE = "date"
@@ -47,8 +49,10 @@ class Weather
   #天気情報をHashより解析する
   def analysisWeather(hash)
     info = WeatherInfo.new
-    #該当の取得
+    #概要の取得
     info.description=(convertNil(hash.dig(@@DESCRIPTION, @@TEXT)))
+    #都市名の取得
+    info.city=(convertNil(hash.dig(@@LOCATION, @@CITY)))
     #本日の天気情報
     info.todayTelop=(convertNil(hash.dig(@@FORECASTS, @@TODAY, @@TELOP)))
     info.today=(convertNil(hash.dig(@@FORECASTS, @@TODAY, @@DATE)))
